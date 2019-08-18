@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="login_activity_title_bar">登录</string>
+    <string name="login_activity_verify_phone_error">请输入正确的手机号</string>
+    <string name="login_activity_replace_second">%1$ds</string>
+    <string name="login_activity_click_to_get">获取验证码</string>
+    <string name="login_activity_auth_code">输入验证码</string>
+    <string name="login_activity_login_btn">登录</string>
+    <string name="login_activity_login_success">登录成功</string>
+    <string name="login_activity_click_login_protocol">点击登录即表示同意</string>
+    <string name="login_activity_user_agreement">《用户协议》</string>
+    <string name="login_activity_val_has_send">验证码已发送，请注意查看</string>
+    <string name="login_activity_hint_input_phone_num">请输入手机号码</string>
+
+    <string name="login_token_invalid_ok">确定</string>
+    <string name="login_token_invalid_msg">登录信息非法或已过期，请重新登录</string>
+    <string name="login_token_invalid_tips">提示</string>
+    <string name="login_force_off_tips">该账号已在其他设备登录，请重新登录</string>
+    <string name="login_activty_auth_code_login">验证码登录</string>
+    <string name="login_activty_welcom">欢迎登录首汽约车</string>
+    <string name="login_logout_verify_code">验证码验证</string>
+    <string name="login_logout_success">账号已注销</string>
+    <string name="login_logout_confirm">确定注销</string>
+    <string name="login_logout_no">暂不注销</string>
+    <string name="login_login_activity_phone_code">%s&#160;&#160;></string>
+    <string name="login_next">下一步</string>
+    <string name="login_code_send">验证码已发送至</string>
+    <string name="login_code_count_down">%1$d秒后重新获取</string>
+    <string name="login_code_regain"><Data><![CDATA[点击 <font color="#ED6253">重新获取</font>]]></Data></string>
+    <string name="login_image_verify_code">图形验证码</string>
+    <string name="login_change_pic"><Data><![CDATA[<font color="#a0a0a0">看不清？</font><font
+        color="#ED6253">换一张</font>]]></Data></string>
+</resources>

@@ -3,6 +3,8 @@ apply from: "config.gradle"
 buildscript {
     
     repositories {
+        maven { url "http://maven.aliyun.com/nexus/content/repositories/jcente" }
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
         google()
         jcenter()
     }
@@ -15,8 +17,11 @@ buildscript {
     }
 }
 
+//配置当前project和所有subproject
 allprojects {
     repositories {
+        maven { url "http://maven.aliyun.com/nexus/content/repositories/jcente" }
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
         google()
         jcenter()
     }
@@ -26,3 +31,8 @@ task clean(type: Delete) {
     delete rootProject.buildDir
 }
 
+//只包含子project
+subprojects{ Project project->
+
+
+}

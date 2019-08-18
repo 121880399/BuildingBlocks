@@ -12,7 +12,6 @@
             <option value="$PROJECT_DIR$/base" />
             <option value="$PROJECT_DIR$/base_communication" />
             <option value="$PROJECT_DIR$/base_lib" />
-            <option value="$PROJECT_DIR$/base_mvp" />
             <option value="$PROJECT_DIR$/base_res" />
             <option value="$PROJECT_DIR$/login" />
           </set>

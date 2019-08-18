@@ -1,0 +1,90 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+
+    <dimen name="dip_0_5">0.5dp</dimen>
+    <dimen name="sp_18">18sp</dimen>
+    <dimen name="sp_14">14sp</dimen>
+    <dimen name="distance_14">14dp</dimen>
+    <dimen name="distance_12">12dp</dimen>
+    <dimen name="distance_2">2dp</dimen>
+    <dimen name="distance_3">3dp</dimen>
+    <dimen name="distance_18">18dp</dimen>
+    <dimen name="sp_15">15sp</dimen>
+    <dimen name="distance_8">8dp</dimen>
+    <dimen name="distance_9">9dp</dimen>
+    <dimen name="distance_10">10dp</dimen>
+    <dimen name="distance_27">27dp</dimen>
+    <dimen name="distance_30">30dp</dimen>
+    <dimen name="distance_5">5dp</dimen>
+    <dimen name="distance_6">6dp</dimen>
+    <dimen name="distance_7">7dp</dimen>
+    <dimen name="distance_4">4dp</dimen>
+    <dimen name="distance_24">24dp</dimen>
+    <dimen name="distance_50">50dp</dimen>
+    <dimen name="distance_13">13dp</dimen>
+    <dimen name="distance_15">15dp</dimen>
+    <dimen name="distance_16">16dp</dimen>
+    <dimen name="distance_55">55dp</dimen>
+    <dimen name="distance_88">88dp</dimen>
+    <dimen name="sp_16">16sp</dimen>
+
+    <dimen name="navigation_title_size">18sp</dimen>
+    <dimen name="split_line_width">0.5dp</dimen>
+
+    <dimen name="round_rect_radius">6dp</dimen>
+
+    <dimen name="dialog_first_spacing">10dp</dimen>
+    <dimen name="dialog_btn_height">48dp</dimen>
+    <dimen name="dialog_content_spacing">32.5dp</dimen>
+    <dimen name="first_spacing">10dp</dimen>
+    <dimen name="second_spacing">15dp</dimen>
+    <dimen name="third_spacing">24dp</dimen>
+    <dimen name="fourth_spacing">30dp</dimen>
+    <dimen name="fifth_spacing">50dp</dimen>
+    <dimen name="sixth_spacing">60dp</dimen>
+    <dimen name="sp_13">13sp</dimen>
+    <dimen name="distance_60">60dp</dimen>
+    <dimen name="distance_48">48dp</dimen>
+    <dimen name="distance_42">42dp</dimen>
+    <dimen name="sp_12">12sp</dimen>
+    <dimen name="sp_10">10sp</dimen>
+    <dimen name="sp_5">5sp</dimen>
+    <dimen name="line_margin">25dp</dimen>
+    <dimen name="first_text_size">18sp</dimen>
+    <dimen name="distance_58">58dp</dimen>
+    <dimen name="distance_52">52dp</dimen>
+    <dimen name="distance_20">20dp</dimen>
+    <dimen name="distance_22">22dp</dimen>
+    <dimen name="distance_100">100dp</dimen>
+    <dimen name="distance_1">1dp</dimen>
+    <dimen name="distance_62">62dp</dimen>
+    <dimen name="elevation">3dp</dimen>
+    <dimen name="no_elevation">0dp</dimen>
+    <dimen name="sp_20">20sp</dimen>
+    <dimen name="sp_21">21sp</dimen>
+    <dimen name="rippleStrokeWidth">2dp</dimen>
+    <dimen name="rippleRadius">10dp</dimen>
+    <dimen name="taxi_tab_padding_left">-10dp</dimen>
+    <!--Shadow-->
+    <dimen name="default_corner_radius">4dp</dimen>
+    <dimen name="default_shadow_radius">4dp</dimen>
+
+
+    <!--电话区号选择-->
+    <dimen name="diver_line">0.5dp</dimen>
+    <dimen name="edit_phone_margin_left">11dp</dimen>
+    <dimen name="phone_code_toast_size">80dp</dimen>
+    <dimen name="phone_code_toast_font_size">30sp</dimen>
+    <dimen name="phone_code_side_bar_width">20dp</dimen>
+    <dimen name="phone_code_item_char_height">40dp</dimen>
+    <dimen name="phone_code_item_content_height">50dp</dimen>
+    <dimen name="phone_code_item_char_padding_left">23dp</dimen>
+    <dimen name="phone_code_item_country_padding_left">24dp</dimen>
+    <dimen name="phone_code_item_char_font">12sp</dimen>
+    <dimen name="phone_code_item_country_font">14sp</dimen>
+    <dimen name="phone_code_item_country_code_font">12sp</dimen>
+    <dimen name="phone_code_item_country_code_left_distance">10dp</dimen>
+
+    <dimen name="login_code_show_font_size">16sp</dimen>
+    <dimen name="wheel_height">260dp</dimen>
+</resources>

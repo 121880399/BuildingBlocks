@@ -1,1 +1,1 @@
-include ':app', ':base', ':base_communication', ':base_lib', ':base_res', ':login', ':base_mvp'
+include ':app', ':base', ':base_communication', ':base_lib', ':base_res', ':login'

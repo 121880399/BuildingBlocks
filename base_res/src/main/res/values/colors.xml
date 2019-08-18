@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimaryDark">#999797</color>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorAccent">#c8161d</color>
+
+    <color name="app_text">#606060</color>
+    <color name="common_white">#FFFFFFFF</color>
+    <color name="bg_white">#FDFDFD</color>
+
+    <drawable name="null_drawable">#00ffffff</drawable>
+    <drawable name="click_drawable">#d8d8d8</drawable>
+    <drawable name="white_drawable">@color/common_white</drawable>
+
+    <color name="transparent">#00000000</color>
+    <color name="transparent_09">#80000000</color>
+    <!--分割线颜色-->
+    <color name="common_line_color">#e5e5e5</color>
+
+    <!--最新分割线颜色-->
+    <color name="common_line_new_color">#1F000000</color>
+    <color name="common_login_color">#16000000</color>
+    <!--4%不透明-->
+    <color name="v0a000000">#0a000000</color>
+    <color name="v1affffff">#1AFFFFFF</color>
+
+    <!--日期选择颜色-->
+
+    <color name="vFF8A0000">#FF8A0000</color>
+    <color name="v323232">#323232</color>
+    <color name="v222222">#222222</color>
+    <color name="v333333">#333333</color>
+    <color name="vf2f2f2">#f2f2f2</color>
+    <color name="vf5f5f5">#f5f5f5</color>
+    <color name="vc8161d">#c8161d</color>
+    <color name="vF03B35">#F03B35</color>
+    <color name="v666666">#666666</color>
+    <color name="v555555">#555555</color>
+    <color name="vd6d6d6">#d6d6d6</color>
+    <color name="v999999">#999999</color>
+    <color name="vcccccc">#cccccc</color>
+    <color name="vdedede">#dedede</color>
+    <color name="ve4e4e4">#e4e4e4</color>
+    <color name="vffffff">#ffffff</color>
+    <color name="vbfbfbf">#bfbfbf</color>
+    <color name="vebebeb">#ebebeb</color>
+    <color name="v000000">#000000</color>
+    <color name="v0a7fff">#0a7fff</color>
+    <color name="v7eb555">#7eb555</color>
+    <color name="vf3f3f3">#f3f3f3</color>
+    <color name="v1ea973">#1ea973</color>
+    <color name="vc2c2c2">#c2c2c2</color>
+    <color name="vee3b42">#ee3b42</color>
+    <color name="vbb0f15">#bb0f15</color>
+    <color name="vf0b500">#f0b500</color>
+    <color name="vd6ac6d">#d6ac6d</color>
+    <color name="ve9e9e9">#e9e9e9</color>
+    <color name="v606060">#606060</color>
+    <color name="vfafafa">#fafafa</color>
+    <color name="v888888">#888888</color>
+    <color name="v0000000">#00000000</color>
+    <color name="ve0e0e0">#e0e0e0</color>
+    <color name="vc1c1c1">#c1c1c1</color>
+    <color name="vf7f7f7">#f7f7f7</color>
+    <color name="vf9f9f9">#f9f9f9</color>
+    <color name="bg_line">#e9e9e9</color>
+    <color name="vd3d3d3">#d3d3d3</color>
+    <color name="vf0f0f0">#f0f0f0</color>
+    <color name="va4000000">#a4000000</color>
+    <color name="vbbbbbb">#bbbbbb</color>
+    <color name="v99602c">#99602c</color>
+    <color name="vb6b6b6">#b6b6b6</color>
+    <color name="vbab6bd">#bab6bd</color>
+    <color name="ve5e5e5">#e5e5e5</color>
+    <color name="ve6e6e6">#e6e6e6</color>
+    <color name="vbababa">#bababa</color>
+    <color name="vff5855">#ff5855</color>
+    <color name="vd8d8d8">#d8d8d8</color>
+    <color name="v4f9ae4">#4F9AE4</color>
+    <color name="va0a0a0">#a0a0a0</color>
+    <color name="vf03b35">#f03b35</color>
+    <color name="vED6253">#ED6253</color>
+    <color name="v000023">#000023</color>
+    <color name="v04bbbf">#04bbbf</color>
+    <color name="ved6253">#ed6253</color>
+    <color name="vFFE7E7E7">#FFE7E7E7</color>
+    <color name="vFFA0A0A0">#FFA0A0A0</color>
+    <color name="vEAEAEB">#EAEAEB</color>
+    <color name="vF5A623">#F5A623</color>
+    <color name="rippleColor">#00000000</color>
+    <color name="order_pool_time">#d9333a</color>
+    <color name="v4c585c">#4c585c</color>
+
+    <color name="color_222222">#222222</color>
+    <color name="color_a0a0a0">#a0a0a0</color>
+    <!--个人中心-->
+    <color name="v323d44">#323d44</color>
+    <color name="v1c2930">#1c2930</color>
+    <!--个人中心-性别选择器-->
+    <color name="v08000000">#08000000</color>
+    <color name="v10000000">#10000000</color>
+    <color name="v04000000">#04000000</color>
+    <color name="ve51d44">#FFE51D44</color>
+    <color name="veb3541">#FFEB3541</color>
+    <color name="vf24f3e">#FFF24F3E</color>
+    <color name="v30e51d44">#4DE51D44</color>
+    <color name="v30eb3541">#4DEB3541</color>
+    <color name="v30f24f3e">#4DF24F3E</color>
+    <color name="ve2e2e2">#FFE2E2E2</color>
+
+    <!--个人中心 账户明细-->
+    <color name="v14b98a">#14b98a</color>
+    <!--整个应用的分割线颜色-->
+    <color name="v6000000">#15000000</color>
+    <!--60%透明度黑色 蒙版的颜色-->
+    <color name="layer_color">#99000000</color>
+    <color name="vffe2e2e2">#ffe2e2e2</color>
+    <color name="v0b0b0b">#FF0B0B0B</color>
+    <color name="v66000000">#66000000</color>
+    <color name="v1a000000">#1a000000</color>
+    <!--Shadow-->
+    <color name="default_shadow_color">#33000000</color>
+    <color name="default_fill_color">#ffffff</color>
+    <color name="transparent_db">#E0DBDBDB</color>
+    <color name="image_overlay_true">#80000000</color>
+    <color name="image_overlay_false">#20000000</color>
+    <color name="vf55d53">#f55d53</color>
+    <color name="v40f55d53">#64f55d53</color>
+    <color name="v04f55d53">#0Bf55d53</color>
+    <color name="vCA9862">#CA9862</color>
+    <color name="vE8BB88">#E8BB88</color>
+    <color name="vA0A0A0">#A0A0A0</color>
+    <color name="vED6353">#ED6353</color>
+    <color name="vcc222222">#cc222222</color>
+
+
+    <!--toast 背景色-->
+    <color name="center_toast_bg">#7F000000</color>
+    <!--电话区号列表分割线-->
+    <color name="RecyclerView_split_line">#14000000</color>
+
+</resources>

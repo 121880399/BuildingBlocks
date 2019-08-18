@@ -121,7 +121,10 @@ ext {
             //database
             "object-box"               : "io.objectbox:objectbox-android:1.5.0",
             "object-browser"           : "io.objectbox:objectbox-android-objectbrowser:1.5.0",
-            "object-processor"         : "io.objectbox:objectbox-processor:1.5.0"
+            "object-processor"         : "io.objectbox:objectbox-processor:1.5.0",
+
+            //AspectJ
+            "AspectJ"                  : "org.aspectj:aspectjrt:1.8.9"
     ]
 
 

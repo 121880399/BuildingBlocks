@@ -1,2 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zzy.login" />
+          package="com.zzy.login" >
+
+
+</manifest>

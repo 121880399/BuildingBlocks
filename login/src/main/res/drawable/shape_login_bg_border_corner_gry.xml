@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <corners android:radius="24dp"/>
+
+    <solid android:color="#0F000000"/>
+    <!--V6.2.3 去掉边线-->
+    <!--<stroke-->
+    <!--android:width="0.5dp"-->
+    <!--android:color="@color/common_line_new_color" />-->
+
+</shape>

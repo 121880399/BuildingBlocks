@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="login_activity_title_bar">Log in</string>
+    <string name="login_activity_verify_phone_error">Please enter valid phone number</string>
+    <string name="login_activity_replace_second">%1$ds</string>
+    <string name="login_activity_click_to_get">Get</string>
+    <string name="login_activity_auth_code">Verification code</string>
+    <string name="login_activity_login_btn">Log In</string>
+    <string name="login_activity_login_success">Logged in</string>
+    <string name="login_activity_click_login_protocol">By clicking Log In,you are agree to our</string>
+    <string name="login_activity_user_agreement">User Terms</string>
+    <string name="login_activity_val_has_send">Verification code is sent to your phone</string>
+    <string name="login_activity_hint_input_phone_num">Phone number</string>
+
+    <string name="login_token_invalid_ok">Confirm</string>
+    <string name="login_token_invalid_msg">Login information is illegal or has expired.Please log in again</string>
+    <string name="login_token_invalid_tips">Reminder</string>
+    <string name="login_force_off_tips">This account is already logged in on another device. Please log in again</string>
+    <string name="login_activty_auth_code_login">Log In</string>
+    <string name="login_activty_welcom">Welcome!</string>
+    <string name="login_next">Next</string>
+    <string name="login_code_send">Verification code has been sent to</string>
+    <string name="login_code_count_down">Resend after %1$d seconds</string>
+    <string name="login_code_regain"><Data><![CDATA[Click <font color="#ED6253">Resend</font>]]></Data></string>
+    <string name="login_image_verify_code">Captcha</string>
+</resources>
