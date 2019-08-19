@@ -116,6 +116,15 @@ dependencies {
 
     api rootProject.ext.dependencies["AspectJ"]
 
+    //APM
+    api rootProject.ext.dependencies["godeye-core"]
+    api rootProject.ext.dependencies["godeye-toolbox"]
+    debugImplementation rootProject.ext.dependencies["debug-godeye"]
+    releaseImplementation  rootProject.ext.dependencies["release-godeye"]
+
+    //启动器
+    api rootProject.ext.dependencies["betterInitiator"]
+
 }
 
 //以下是AspectJ的配置
