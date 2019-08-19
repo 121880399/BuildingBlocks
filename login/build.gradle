@@ -1,6 +1,7 @@
 def currentModule = rootProject.ext.modules.login
 if (currentModule.isRunAlone) {
     apply plugin: 'com.android.application'
+    apply plugin: 'cn.hikyson.methodcanary.plugin'
 } else {
     apply plugin: 'com.android.library'
 }

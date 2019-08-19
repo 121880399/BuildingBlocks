@@ -34,7 +34,7 @@ public class TimeLogAspect {
     /**
      * 根据包名切入,根据是否全局打印来打开或关闭
      */
-    @Pointcut("execution(* org.zzy.easyaop..*.*(..))")
+    @Pointcut("execution(* com.zzy..*.*(..))")
     public void packagePointcut(){}
 
 //    @Around("methodPointcut() || constructorPointcut() || packagePointcut()")

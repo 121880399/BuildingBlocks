@@ -2,7 +2,7 @@
     package="com.zzy.login" >
     <application
         android:name=".LoginApplication"
-        android:theme="@style/login_AppTheme"
+        android:theme="@style/AppTheme"
         >
 
         <activity android:name=".view.LoginActivity">

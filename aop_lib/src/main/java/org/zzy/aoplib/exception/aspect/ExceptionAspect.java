@@ -18,7 +18,7 @@ public class ExceptionAspect {
     /**
      * 按包名
      */
-    private static final String PACKAGE_POINTCUT_METHOD = "execution(* org.zzy.easyaop..*.*(..))";
+    private static final String PACKAGE_POINTCUT_METHOD = "execution(* com.zzy..*.*(..))";
 
     /**
      * 按注解
