@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">base</string>
+    <string name="lastClickKey">lastClickKey</string>
 </resources>
