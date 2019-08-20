@@ -5,6 +5,7 @@ import android.content.Context;
 
 import com.zzy.base.AppConfig;
 import com.zzy.base.BaseApplication;
+import com.zzy.buildingblocks.init.ArouterTask;
 import com.zzy.buildingblocks.init.GodEyeTask;
 import com.zzy.buildingblocks.init.InitModuleTask;
 
@@ -13,7 +14,7 @@ import org.zzy.initiator.utils.DispatcherExecutor;
 
 public class MainApplication extends BaseApplication{
 
-    public static Application APP;
+    public static MainApplication APP;
 
     @Override
     protected void attachBaseContext(Context base) {
@@ -26,6 +27,7 @@ public class MainApplication extends BaseApplication{
         super.onCreate();
         TaskDispatcher dispatcher = new TaskDispatcher()
                 .init(this)
+                .addTask(new ArouterTask(this))
                 .addTask(new InitModuleTask(this))
                 .addTask(new GodEyeTask(this));
         dispatcher.start();

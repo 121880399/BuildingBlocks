@@ -39,7 +39,7 @@ dependencies {
 //    }
     api rootProject.ext.dependencies["annotations"]
 
-    //view
+    //view 组件化架构下butterknife有点坑，暂时不使用
     api(rootProject.ext.dependencies["butterknife"]) {
         exclude module: 'support-annotations'
     }
@@ -119,5 +119,8 @@ dependencies {
 
     //启动器
     api rootProject.ext.dependencies["betterInitiator"]
+
+    //arouter
+    api rootProject.ext.dependencies["arouter"]
 
 }

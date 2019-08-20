@@ -1,4 +1,4 @@
-def currentModule = rootProject.ext.modules.login
+def currentModule = rootProject.ext.modules.pay
 if (currentModule.isRunAlone) {
     apply plugin: 'com.android.application'
     apply plugin: 'cn.hikyson.methodcanary.plugin'
@@ -12,7 +12,6 @@ android {
     // 业务组件资源前缀，避免冲突
     resourcePrefix "${moduleName}_"
 
-
     defaultConfig {
         minSdkVersion rootProject.ext.android["minSdkVersion"]
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
@@ -20,6 +19,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
         //单独运行时，设置applicationId
         if(currentModule.isRunAlone){
             applicationId currentModule.applicationId
@@ -44,18 +44,14 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            matchingFallbacks = ['release','debug']
-        }
-        debug {
-            matchingFallbacks = ['release','debug']
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(path: ':base')
     annotationProcessor  rootProject.ext.dependencies["arouter-compiler"]
 }

@@ -16,6 +16,6 @@ public class LoginApplication extends BaseApplication {
 
     @Override
     public void initModuleApplication(Application application) {
-        LoginServiceFactory.getInstance().setLoginService(new LoginService());
+        LoginServiceFactory.getInstance().setLoginService(LoginService.getInstance());
     }
 }

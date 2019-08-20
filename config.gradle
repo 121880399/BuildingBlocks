@@ -26,6 +26,10 @@ ext {
                     isRunAlone : false,
                     applicationId: "${rootProject.ext.applicationId}.login",
             ],
+            pay:[
+                    isRunAlone: false,
+                    applicationId: "${rootProject.ext.applicationId}.pay",
+            ],
     ]
 
     dependencies = [
@@ -134,6 +138,10 @@ ext {
 
             //initiator
             "betterInitiator"           :"com.github.121880399:betterInitiator:1.0.5",
+
+            //Arouter
+            "arouter"                   : "com.alibaba:arouter-api:1.5.0",
+            "arouter-compiler"          : "com.alibaba:arouter-compiler:1.2.2",
     ]
 
 

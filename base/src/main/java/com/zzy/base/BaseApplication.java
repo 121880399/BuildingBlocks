@@ -4,6 +4,13 @@ import android.app.Application;
 
 public abstract class BaseApplication extends Application {
 
+    private static boolean mDebug = true;
+
+    public static boolean isDebug(){
+        return mDebug;
+    }
+
+
     /**
      * Application初始化
      * */
