@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 apply plugin: 'cn.hikyson.methodcanary.plugin'
 apply plugin: 'android-aspectjx'
+apply plugin: 'org.zzy.gradle.study'
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
     defaultConfig {
-        applicationId "com.zzy.buildingblocks"
+        applicationId rootProject.ext.applicationId
         minSdkVersion rootProject.ext.android["minSdkVersion"]
         targetSdkVersion rootProject.ext.android["targetSdkVersion"]
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [ AROUTER_MODULE_NAME : project.getName() ]
@@ -30,6 +30,30 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+    sourceSets {
+        main{
+            //将SO库的位置从main/jniLibs改为libs文件夹
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    sourceSets {
+        main{
+            res.srcDirs = ['src/main/res',
+                           'src/main/res-ad',
+                           'src/main/res-dispatch']
+        }
+    }
+}
+
+releaseInfo{
+    versionCode = "1"
+    versionName = "1.0"
+    versionDes = "第一个版本"
 }
 
 dependencies {

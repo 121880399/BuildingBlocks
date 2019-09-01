@@ -1,1 +1,2 @@
-include ':app', ':base', ':base_communication', ':base_lib', ':base_res', ':login', ':pay'
+include ':app', ':base', ':base_communication', ':base_lib', ':base_res', ':login', ':pay', 'buildSrc'
+

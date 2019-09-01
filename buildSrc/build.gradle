@@ -1,0 +1,60 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+buildscript {
+    repositories {
+        maven { url "http://maven.aliyun.com/nexus/content/repositories/jcente" }
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        maven { url 'https://jitpack.io' }
+        mavenCentral()
+        jcenter()
+        google()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.1'
+    }
+}
+
+sourceSets {
+    main{
+       resources {
+           srcDir('src/main/resources')
+       }
+    }
+}
+//上传到maven库
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "http://localhost:8081/repository/org.zzy.graldestudy/") {
+                authentication(userName: "zzy", password: "zzydatougui")
+            }
+            pom.groupId = "org.zzy"
+            pom.artifactId = "gradlestudy"
+            pom.version = "1.0.0"
+            pom.packaging = "aar"
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs << '-Xlint:unchecked'
+    options.deprecation = true
+}
+
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+    compile 'com.android.tools.build:gradle:3.4.1'
+}
+allprojects {
+    repositories {
+        maven { url "http://maven.aliyun.com/nexus/content/repositories/jcente" }
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        maven { url 'https://jitpack.io' }
+        mavenCentral()
+        google()
+    }
+}

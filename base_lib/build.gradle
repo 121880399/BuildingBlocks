@@ -22,6 +22,7 @@ android {
 
 }
 
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     //support
@@ -31,6 +32,7 @@ dependencies {
     api(rootProject.ext.dependencies["appcompat-v7"]) {
         exclude module: 'support-annotations'
         exclude module: 'support-v4'
+        transitive false
     }
 //    api(rootProject.ext.dependencies["design"]) {
 //        exclude module: 'support-annotations'
@@ -42,18 +44,22 @@ dependencies {
     //view 组件化架构下butterknife有点坑，暂时不使用
     api(rootProject.ext.dependencies["butterknife"]) {
         exclude module: 'support-annotations'
+        transitive false
     }
 
     api rootProject.ext.dependencies["progressmanager"]
 
     //rx
-    api rootProject.ext.dependencies["rxjava2"]
+    api (rootProject.ext.dependencies["rxjava2"]){
+
+    }
     api(rootProject.ext.dependencies["rxandroid2"]) {
         exclude module: 'rxjava'
     }
 
     api(rootProject.ext.dependencies["rxlifecycle2"]) {
         exclude module: 'rxjava'
+        exclude module: 'jsr305'
     }
     api(rootProject.ext.dependencies["rxlifecycle2-components"]) {
         exclude module: 'support-v4'
@@ -61,7 +67,6 @@ dependencies {
         exclude module: 'support-annotations'
         exclude module: 'rxjava'
         exclude module: 'rxandroid'
-        exclude module: 'rxlifecycle'
     }
     api(rootProject.ext.dependencies["rxpermissions2"]) {
         exclude module: 'rxjava'
@@ -89,7 +94,8 @@ dependencies {
         exclude module: 'retrofit'
         exclude module: 'okio'
     }
-    api rootProject.ext.dependencies["okhttp3"]
+    api (rootProject.ext.dependencies["okhttp3"]){
+    }
     api rootProject.ext.dependencies["glide"]
     api rootProject.ext.dependencies["glide-okhttp3"]
 
@@ -97,13 +103,18 @@ dependencies {
     //tools
     compileOnly rootProject.ext.dependencies["javax.annotation"]
     api rootProject.ext.dependencies["androideventbus"]
-    api rootProject.ext.dependencies["fastJson"]
-    api rootProject.ext.dependencies["fastJson-converter"]
+    api (rootProject.ext.dependencies["fastJson-android"])
+    api (rootProject.ext.dependencies["fastJson-converter"]){
+        exclude module: 'fastjson'
+        exclude module: 'retrofit'
+    }
     api rootProject.ext.dependencies["gson"]
     api rootProject.ext.dependencies["zxing"]
 
     //从相册中选择图片 或 拍照
-    api rootProject.ext.dependencies["imagePicker"]
+    api (rootProject.ext.dependencies["imagePicker"]){
+        exclude module: 'appcompat-v7'
+    }
 
 
     //test
@@ -113,14 +124,20 @@ dependencies {
     api rootProject.ext.dependencies["AspectJ"]
 
     //APM
-    api rootProject.ext.dependencies["godeye-core"]
+    api (rootProject.ext.dependencies["godeye-core"]){
+        exclude module: 'rxjava'
+        exclude module: 'rxandroid'
+        exclude module: 'gson'
+        exclude module: 'okio'
+    }
     api rootProject.ext.dependencies["godeye-toolbox"]
     api rootProject.ext.dependencies["debug-godeye"]
 
     //启动器
-    api rootProject.ext.dependencies["betterInitiator"]
+    api (rootProject.ext.dependencies["betterInitiator"])
 
     //arouter
     api rootProject.ext.dependencies["arouter"]
 
+    api "com.squareup.oki:okio:2.3.0"
 }
