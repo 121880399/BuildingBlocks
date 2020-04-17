@@ -108,6 +108,7 @@ ext {
             "fastJson-converter"       : "org.ligboy.retrofit2:converter-fastjson:2.1.0",
             "zxing"                    : "com.google.zxing:core:3.3.2",
             "imagePicker"              : "com.linchaolong.android:imagepicker:1.5",
+            "okio"                     : "com.squareup.okio:okio:2.4.3",
 
             //test
             "junit"                    : "junit:junit:4.12",

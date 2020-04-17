@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'cn.hikyson.methodcanary.plugin'
 apply plugin: 'android-aspectjx'
-apply plugin: 'org.zzy.gradle.study'
+
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
     defaultConfig {
@@ -48,12 +48,6 @@ android {
                            'src/main/res-dispatch']
         }
     }
-}
-
-releaseInfo{
-    versionCode = "1"
-    versionName = "1.0"
-    versionDes = "第一个版本"
 }
 
 dependencies {
