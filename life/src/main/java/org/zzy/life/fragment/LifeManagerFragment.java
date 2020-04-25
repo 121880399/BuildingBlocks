@@ -10,6 +10,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import org.zzy.life.ActivityFragmentLifecycle;
+import org.zzy.life.interf.LifecycleListener;
+
+import java.util.List;
 
 /**
  * ================================================
@@ -28,8 +31,16 @@ public class LifeManagerFragment extends Fragment {
     }
 
     @SuppressLint("ValidFragment")
-    public LifeManagerFragment(ActivityFragmentLifecycle lifecycle) {
+    private LifeManagerFragment(ActivityFragmentLifecycle lifecycle) {
         this.lifecycle = lifecycle;
+    }
+
+    public static LifeManagerFragment getInstance(List<LifecycleListener> listeners){
+        LifeManagerFragment fragment = new LifeManagerFragment();
+        for (LifecycleListener listener :listeners) {
+            fragment.lifecycle.addListener(listener);
+        }
+        return fragment;
     }
 
 

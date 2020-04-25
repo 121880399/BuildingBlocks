@@ -1,16 +1,21 @@
 package org.zzy.life;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.os.Build;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 
 import org.zzy.life.fragment.LifeManagerFragment;
 import org.zzy.life.fragment.SupportLifeManagerFragment;
+import org.zzy.life.interf.LifecycleListener;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -32,28 +37,38 @@ public class Lifecycle {
 
     }
 
-    public void with(Activity activity){
+    public void with(Activity activity, LifecycleListener... listener){
+        assertNotDestroyed(activity);
         FragmentManager fragmentManager = activity.getFragmentManager();
         LifeManagerFragment current = (LifeManagerFragment) fragmentManager.findFragmentByTag(FRAGMENT_TAG);
         if(current == null){
             current = lifeManagerFragments.get(fragmentManager);
             if(current == null){
-                current = new LifeManagerFragment();
+                current = LifeManagerFragment.getInstance(Arrays.asList(listener));
                 lifeManagerFragments.put(fragmentManager,current);
             }
         }
         fragmentManager.beginTransaction().add(current,FRAGMENT_TAG).commitAllowingStateLoss();
     }
 
-    public void with(Fragment fragment){
+    public void with(Fragment fragment, LifecycleListener... listener){
+        if (fragment.getActivity() == null) {
+            throw new IllegalArgumentException("You cannot start a load on a fragment before it is attached");
+        }
+    }
+
+    public void with(android.app.Fragment fragment, LifecycleListener... listener){
 
     }
 
-    public void with(android.app.Fragment fragment){
+    public void with(FragmentActivity activity, LifecycleListener... listener){
 
     }
 
-    public void with(FragmentActivity activity){
-
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+    private static void assertNotDestroyed(Activity activity) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1 && activity.isDestroyed()) {
+            throw new IllegalArgumentException("You cannot start a load for a destroyed activity");
+        }
     }
 }
