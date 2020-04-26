@@ -1,6 +1,7 @@
 package org.zzy.life.fragment;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import org.zzy.life.ActivityFragmentLifecycle;
+import org.zzy.life.Lifecycle;
 import org.zzy.life.interf.LifecycleListener;
 
 import java.util.List;
@@ -25,6 +27,8 @@ import java.util.List;
 public class LifeManagerFragment extends Fragment {
 
     private final ActivityFragmentLifecycle lifecycle;
+
+    private android.app.FragmentManager mCurrentFM;
 
     public LifeManagerFragment() {
         this(new ActivityFragmentLifecycle());
@@ -43,6 +47,11 @@ public class LifeManagerFragment extends Fragment {
         return fragment;
     }
 
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        mCurrentFM = activity.getFragmentManager();
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -78,5 +87,8 @@ public class LifeManagerFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         lifecycle.onDestroy();
+        Lifecycle.getInstance().removeLifeManagerFragment(mCurrentFM);
     }
+
+
 }

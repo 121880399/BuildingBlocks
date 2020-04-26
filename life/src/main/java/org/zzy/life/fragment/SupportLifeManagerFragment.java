@@ -1,13 +1,20 @@
 package org.zzy.life.fragment;
 
+import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 import org.zzy.life.ActivityFragmentLifecycle;
+import org.zzy.life.Lifecycle;
+import org.zzy.life.interf.LifecycleListener;
+
+import java.util.List;
 
 /**
  * ================================================
@@ -21,6 +28,8 @@ public class SupportLifeManagerFragment extends Fragment {
 
     private final ActivityFragmentLifecycle lifecycle;
 
+    private androidx.fragment.app.FragmentManager mCurrentFM;
+
     public SupportLifeManagerFragment(){
         this(new ActivityFragmentLifecycle());
     }
@@ -29,17 +38,20 @@ public class SupportLifeManagerFragment extends Fragment {
         this.lifecycle = lifecycle;
     }
 
-
+    public static SupportLifeManagerFragment getInstance(List<LifecycleListener> listeners){
+        SupportLifeManagerFragment fragment = new SupportLifeManagerFragment();
+        for (LifecycleListener listener :listeners) {
+            fragment.lifecycle.addListener(listener);
+        }
+        return fragment;
+    }
 
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
-
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
+        if(context instanceof FragmentActivity){
+            mCurrentFM = ((FragmentActivity) context).getSupportFragmentManager();
+        }
     }
 
     @Override
@@ -76,7 +88,10 @@ public class SupportLifeManagerFragment extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         lifecycle.onDestroy();
+        Lifecycle.getInstance().removeSupportLifeManagerFragment(mCurrentFM);
     }
+
+
 
 
 }
