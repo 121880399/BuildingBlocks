@@ -7,9 +7,9 @@ import org.zzy.life.interf.LifecycleListener;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
-import java.util.WeakHashMap;
 
 /**
  * ================================================
@@ -35,8 +35,8 @@ public class ActivityFragmentLifecycle {
     /**
      * 保存所有生命周期监听器
      */
-    private final Set<LifecycleListener> lifecycleListeners = Collections.newSetFromMap(new WeakHashMap<LifecycleListener,
-            Boolean>());
+    private final Set<LifecycleListener> lifecycleListeners = Collections.newSetFromMap(new HashMap<LifecycleListener,
+                Boolean>());
 
 
     /**

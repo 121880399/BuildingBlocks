@@ -2,6 +2,7 @@ package org.zzy.life;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.Application;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.os.Build;
@@ -15,8 +16,8 @@ import org.zzy.life.fragment.SupportLifeManagerFragment;
 import org.zzy.life.interf.LifecycleListener;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * ================================================
@@ -29,9 +30,10 @@ import java.util.Map;
 public class Lifecycle {
     private static final String FRAGMENT_TAG = "org.zzy.life";
 
-    final Map<android.app.FragmentManager, LifeManagerFragment> lifeManagerFragments = new HashMap<>();
+    final Map<android.app.FragmentManager, LifeManagerFragment> lifeManagerFragments = new ConcurrentHashMap<>();
 
-    final Map<androidx.fragment.app.FragmentManager, SupportLifeManagerFragment> supportLifeManagerFragments = new HashMap<>();
+    final Map<androidx.fragment.app.FragmentManager, SupportLifeManagerFragment> supportLifeManagerFragments =
+            new ConcurrentHashMap<>();
 
     private Lifecycle() {
 
@@ -45,8 +47,14 @@ public class Lifecycle {
         return Holder.INSTANCE;
     }
 
-    public void with(Context context) {
-
+    public void with(Context context,LifecycleListener... listener) {
+        if(context instanceof Application){
+            throw new IllegalArgumentException("For the moment not surport ApplicationContext!");
+        }else if(context instanceof Activity){
+            with(context,listener);
+        }else if(context instanceof FragmentActivity){
+            with(context,listener);
+        }
     }
 
     public void with(Activity activity, LifecycleListener... listener) {
@@ -56,39 +64,26 @@ public class Lifecycle {
     }
 
 
-    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
     public void with(Fragment fragment, LifecycleListener... listener) {
         if (fragment.getActivity() == null) {
             throw new IllegalArgumentException("You cannot start a load on a fragment before it is attached");
         }
-        if (!isOnMainThread() || Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            // TODO: 2020/4/26 不在主线程的情况
-        } else {
-            androidx.fragment.app.FragmentManager childFragmentManager = fragment.getChildFragmentManager();
-            getSupportLifeManagerFragment(childFragmentManager, listener);
-        }
+        androidx.fragment.app.FragmentManager childFragmentManager = fragment.getChildFragmentManager();
+        getSupportLifeManagerFragment(childFragmentManager, listener);
     }
 
     public void with(android.app.Fragment fragment, LifecycleListener... listener) {
         if (fragment.getActivity() == null) {
             throw new IllegalArgumentException("You cannot start a load on a fragment before it is attached");
         }
-        if (!isOnMainThread() || Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            // TODO: 2020/4/26 不在主线程的情况
-        } else {
-            android.app.FragmentManager childFragmentManager = fragment.getChildFragmentManager();
-            getLifeManagerFragment(childFragmentManager, listener);
-        }
+        android.app.FragmentManager childFragmentManager = fragment.getChildFragmentManager();
+        getLifeManagerFragment(childFragmentManager, listener);
     }
 
     public void with(FragmentActivity activity, LifecycleListener... listener) {
-        if (!isOnMainThread()) {
-
-        } else {
-            assertNotDestroyed(activity);
-            androidx.fragment.app.FragmentManager supportFragmentManager = activity.getSupportFragmentManager();
-            getSupportLifeManagerFragment(supportFragmentManager, listener);
-        }
+        assertNotDestroyed(activity);
+        androidx.fragment.app.FragmentManager supportFragmentManager = activity.getSupportFragmentManager();
+        getSupportLifeManagerFragment(supportFragmentManager, listener);
     }
 
     private void getLifeManagerFragment(FragmentManager fragmentManager, LifecycleListener[] listener) {
@@ -117,31 +112,15 @@ public class Lifecycle {
         fragmentManager.beginTransaction().add(current, FRAGMENT_TAG).commitAllowingStateLoss();
     }
 
-    public LifeManagerFragment getLifeManagerFragment(android.app.FragmentManager fm) {
-        LifeManagerFragment current = (LifeManagerFragment) fm.findFragmentByTag(FRAGMENT_TAG);
-        if (current == null) {
-            current = lifeManagerFragments.get(fm);
-        }
-        return current;
-    }
-
-    public SupportLifeManagerFragment getLifeManagerFragment(androidx.fragment.app.FragmentManager fm) {
-        SupportLifeManagerFragment current = (SupportLifeManagerFragment) fm.findFragmentByTag(FRAGMENT_TAG);
-        if (current == null) {
-            current = supportLifeManagerFragments.get(fm);
-        }
-        return current;
-    }
-
     public void removeLifeManagerFragment(android.app.FragmentManager fm) {
-        if(null != lifeManagerFragments) {
+        if (null != lifeManagerFragments) {
             lifeManagerFragments.remove(fm);
         }
 
     }
 
-    public void removeSupportLifeManagerFragment(androidx.fragment.app.FragmentManager fm){
-        if(null != supportLifeManagerFragments){
+    public void removeSupportLifeManagerFragment(androidx.fragment.app.FragmentManager fm) {
+        if (null != supportLifeManagerFragments) {
             supportLifeManagerFragments.remove(fm);
         }
     }
